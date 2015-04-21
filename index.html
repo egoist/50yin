@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>日语五十音测试</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css?1.00">
+</head>
+<body>
+<h1 class="tc">
+  <a href="/" class="sitename">日语五十音测试</a>
+</h1>
+<div class="output tc">
+loading...
+</div>
+<footer class="tc">
+  made by malachai
+</footer>
+<script id="choose-template" type="x-tmpl-mustache">
+  <h2>选择范围</h2>
+  <a class="clickable line" id="aline" href="#!c/aline">あ行</a>
+  <a class="clickable line" id="kaline" href="#!c/kaline">か行</a>
+  <a class="clickable line" id="saline" href="#!c/saline">さ行</a>
+</script>
+
+<script id="aline-template" type="x-tmpl-mustache">
+<div class="char" id="char">{{ char_name }}</div>
+<div class="choices clearfix">
+  <div class="choice" data-id="aline">a</div>
+  <div class="choice" data-id="aline">i</div>
+  <div class="choice" data-id="aline">u</div>
+  <div class="choice" data-id="aline">e</div>
+  <div class="choice" data-id="aline">o</div>
+</div>
+<div class="result" id="result">
+{{ current_count }}/100 &nbsp;<span class="correct">{{correct}}</span> : <span class="fault">{{wrong}}</span> &nbsp;<span class="clock"></span>
+  {{#errors}}
+  <div class="wrong">{{ name }} : {{ sound }}</div>
+  {{/errors}}
+</div>
+</script>
+
+<script id="kaline-template" type="x-tmpl-mustache">
+<div class="char" id="char">{{ char_name }}</div>
+<div class="choices clearfix">
+  <div class="choice" data-id="kaline">ka</div>
+  <div class="choice" data-id="kaline">ki</div>
+  <div class="choice" data-id="kaline">ku</div>
+  <div class="choice" data-id="kaline">ke</div>
+  <div class="choice" data-id="kaline">ko</div>
+</div>
+<div class="result" id="result">
+{{ current_count }}/100 &nbsp;<span class="correct">{{correct}}</span> : <span class="fault">{{wrong}}</span> &nbsp;<span class="clock"></span>
+  {{#errors}}
+  <div class="wrong">{{ name }} : {{ sound }}</div>
+  {{/errors}}
+</div>
+</script>
+
+<script id="saline-template" type="x-tmpl-mustache">
+<div class="char" id="char">{{ char_name }}</div>
+<div class="choices clearfix">
+  <div class="choice" data-id="saline">sa</div>
+  <div class="choice" data-id="saline">shi</div>
+  <div class="choice" data-id="saline">su</div>
+  <div class="choice" data-id="saline">se</div>
+  <div class="choice" data-id="saline">so</div>
+</div>
+<div class="result" id="result">
+{{ current_count }}/100 &nbsp;<span class="correct">{{correct}}</span> : <span class="fault">{{wrong}}</span> &nbsp;<span class="clock"></span>
+  {{#errors}}
+  <div class="wrong">{{ name }} : {{ sound }}</div>
+  {{/errors}}
+</div>
+</script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/mustache.min.js"></script>
+<script src="js/q.min.js"></script>
+<script src="js/app.js?1.07"></script>
+</body>
+</html>
